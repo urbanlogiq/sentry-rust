@@ -41,14 +41,13 @@ tracing = ["sentry-tracing"]
 test = ["sentry-core/test"]
 debug-logs = ["dep:log", "sentry-core/debug-logs"]
 # transports
-transport = ["reqwest", "native-tls"]
+transport = ["reqwest", "rustls"]
 reqwest = ["dep:reqwest", "httpdate", "tokio"]
 curl = ["dep:curl", "httpdate"]
 surf-h1 = ["surf/h1-client", "httpdate"]
 surf = ["surf/curl-client", "http-client", "httpdate", "isahc", "tokio"]
 ureq = ["dep:ureq", "httpdate"]
 # transport settings
-native-tls = ["dep:native-tls", "reqwest?/default-tls", "ureq?/native-tls"]
 rustls = ["dep:rustls", "reqwest?/rustls-tls", "ureq?/tls", "webpki-roots"]
 
 [dependencies]
@@ -77,7 +76,6 @@ isahc = { version = "0.9.14", optional = true }
 serde_json = { version = "1.0.48", optional = true }
 tokio = { version = "1.0", features = ["rt"], optional = true }
 ureq = { version = "2.7.0", optional = true, default-features = false }
-native-tls = { version = "0.2.8", optional = true }
 rustls = { version = "0.21.2", optional = true, features = [
     "dangerous_configuration",
 ] }

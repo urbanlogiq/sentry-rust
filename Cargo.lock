@@ -165,7 +165,7 @@ dependencies = [
  "serde_urlencoded",
  "smallvec",
  "socket2 0.5.6",
- "time 0.3.30",
+ "time 0.3.35",
  "url",
 ]
 
@@ -252,9 +252,9 @@ dependencies = [
 
 [[package]]
 name = "ahash"
-version = "0.8.6"
+version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "91429305e9f0a25f6205c5b8e0d2db09e0708a7a6df0f42212bb56c32c8ac97a"
+checksum = "77c3a9648d43b9cd48db467b3f87fdd6e146bcc88ab0180006cef2179fe11d01"
 dependencies = [
  "cfg-if",
  "getrandom 0.2.13",
@@ -915,7 +915,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e859cd57d0710d9e06c381b550c06e76992472a8c6d527aecd2fc673dcc231fb"
 dependencies = [
  "percent-encoding",
- "time 0.3.30",
+ "time 0.3.35",
  "version_check",
 ]
 
@@ -1808,22 +1808,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hyper-tls"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "70206fc6890eaca9fde8a0bf71caa2ddfc9fe045ac9e5c70df101a7dbde866e0"
-dependencies = [
- "bytes 1.6.0",
- "http-body-util",
- "hyper 1.2.0",
- "hyper-util",
- "native-tls",
- "tokio",
- "tokio-native-tls",
- "tower-service",
-]
-
-[[package]]
 name = "hyper-util"
 version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2180,6 +2164,12 @@ dependencies = [
  "overload",
  "winapi",
 ]
+
+[[package]]
+name = "num-conv"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "51d515d32fb182ee37cda2ccdcb92950d6a3c2893aa280e540671c2cd0f3b1d9"
 
 [[package]]
 name = "num-traits"
@@ -2667,13 +2657,11 @@ dependencies = [
  "http-body-util",
  "hyper 1.2.0",
  "hyper-rustls",
- "hyper-tls",
  "hyper-util",
  "ipnet",
  "js-sys",
  "log",
  "mime",
- "native-tls",
  "once_cell",
  "percent-encoding",
  "pin-project-lite",
@@ -2685,7 +2673,6 @@ dependencies = [
  "serde_urlencoded",
  "sync_wrapper",
  "tokio",
- "tokio-native-tls",
  "tokio-rustls",
  "tower-service",
  "url",
@@ -2946,7 +2933,7 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 
 [[package]]
 name = "sentry"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "actix-web",
  "anyhow",
@@ -2955,7 +2942,6 @@ dependencies = [
  "httpdate",
  "isahc",
  "log",
- "native-tls",
  "pretty_env_logger",
  "reqwest",
  "rustls 0.21.10",
@@ -2982,7 +2968,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-actix"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "actix-web",
  "futures",
@@ -2994,7 +2980,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-anyhow"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "anyhow",
  "sentry",
@@ -3004,7 +2990,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-backtrace"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "backtrace",
  "once_cell",
@@ -3014,7 +3000,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-contexts"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "hostname",
  "libc",
@@ -3027,7 +3013,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-core"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "anyhow",
  "cadence",
@@ -3048,7 +3034,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-debug-images"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "findshlibs",
  "once_cell",
@@ -3057,7 +3043,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-log"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "log",
  "pretty_env_logger",
@@ -3067,7 +3053,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-panic"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "sentry",
  "sentry-backtrace",
@@ -3076,7 +3062,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-slog"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "erased-serde",
  "sentry",
@@ -3088,7 +3074,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-tower"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "anyhow",
  "axum 0.7.1",
@@ -3108,7 +3094,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-tracing"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "log",
  "sentry",
@@ -3122,7 +3108,7 @@ dependencies = [
 
 [[package]]
 name = "sentry-types"
-version = "0.32.2"
+version = "0.32.3"
 dependencies = [
  "debugid",
  "hex",
@@ -3131,7 +3117,7 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror",
- "time 0.3.30",
+ "time 0.3.35",
  "url",
  "uuid",
 ]
@@ -3514,16 +3500,17 @@ dependencies = [
 
 [[package]]
 name = "time"
-version = "0.3.30"
+version = "0.3.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4a34ab300f2dee6e562c10a046fc05e358b29f9bf92277f30c3c8d82275f6f5"
+checksum = "ef89ece63debf11bc32d1ed8d078ac870cbeb44da02afb02a9ff135ae7ca0582"
 dependencies = [
  "deranged",
  "itoa",
+ "num-conv",
  "powerfmt",
  "serde",
  "time-core",
- "time-macros 0.2.15",
+ "time-macros 0.2.18",
 ]
 
 [[package]]
@@ -3544,10 +3531,11 @@ dependencies = [
 
 [[package]]
 name = "time-macros"
-version = "0.2.15"
+version = "0.2.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4ad70d68dba9e1f8aceda7aa6711965dfec1cac869f311a51bd08b3a2ccbce20"
+checksum = "3f252a68540fde3a3877aeea552b832b40ab9a69e318efd078774a01ddee1ccf"
 dependencies = [
+ "num-conv",
  "time-core",
 ]
 
@@ -3627,16 +3615,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.58",
-]
-
-[[package]]
-name = "tokio-native-tls"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bbae76ab933c85776efabc971569dd6119c580d8f5d448769dec1764bf796ef2"
-dependencies = [
- "native-tls",
- "tokio",
 ]
 
 [[package]]
@@ -3877,7 +3855,6 @@ checksum = "f8cdd25c339e200129fe4de81451814e5228c9b771d57378817d6117cc2b3f97"
 dependencies = [
  "base64 0.21.7",
  "log",
- "native-tls",
  "once_cell",
  "rustls 0.21.10",
  "rustls-webpki 0.101.7",
