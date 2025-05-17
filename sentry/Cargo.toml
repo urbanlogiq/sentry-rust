@@ -46,9 +46,8 @@ reqwest = ["dep:reqwest", "httpdate", "tokio"]
 curl = ["dep:curl", "httpdate"]
 surf-h1 = ["surf/h1-client", "httpdate"]
 surf = ["surf/curl-client", "http-client", "httpdate", "isahc", "tokio"]
-ureq = ["dep:ureq", "httpdate"]
 # transport settings
-rustls = ["dep:rustls", "reqwest?/rustls-tls", "ureq?/tls", "webpki-roots"]
+rustls = ["dep:rustls", "reqwest?/rustls-tls", "webpki-roots"]
 
 [dependencies]
 sentry-core = { version = "0.32.3", path = "../sentry-core", features = [
@@ -75,7 +74,6 @@ http-client = { version = "6.5.3", optional = true }
 isahc = { version = "0.9.14", optional = true }
 serde_json = { version = "1.0.48", optional = true }
 tokio = { version = "1.0", features = ["rt"], optional = true }
-ureq = { version = "2.7.0", optional = true, default-features = false }
 rustls = { version = "0.21.2", optional = true, features = [
     "dangerous_configuration",
 ] }
